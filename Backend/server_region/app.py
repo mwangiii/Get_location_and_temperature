@@ -18,7 +18,9 @@ api = Api(app)
 
 @app.route("/")
 def home_page():
-    return "who are you?"
+    heading = "Check out!"
+    lasting = "It's working"
+    return heading + "https://njekev65.pythonanywhere.com/api/hello?visitor_name=%22Mark%22" + lasting
 
 
 @app.route("/api")
@@ -39,13 +41,12 @@ class hello_visitor(Resource):
         response = {
             "client_ip": client_ip,
             "location": location,
-            "greeting": f"Hello, {visitor_name}!,
-            the temperature is {temperature} degrees Celsius in {location}"
+            "greeting": f"Hello, {visitor_name}!,the temperature is {temperature} degrees Celsius in {location}"
         }
         return jsonify(response)
 
 
-api.add_resource(HelloVisitor, "/api/hello")
+api.add_resource(hello_visitor, "/api/hello")
 
 if __name__ == "__main__":
     app.run(debug=False,host='0.0.0.0')
