@@ -53,8 +53,7 @@ body {
 }
 
 .content img {
-  opacity: 0.5;
-  filter: grayscale(60%);
+  opacity: 0.6;
   max-width: 100%;
   height: auto;
   border-radius: 10px;
